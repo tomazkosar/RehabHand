@@ -1,0 +1,10 @@
+hand arduino
+close hand
+speed slow
+repeat
+begin
+	open hand
+	close hand
+end
+
+

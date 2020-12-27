@@ -1,0 +1,13 @@
+hand arduino
+open hand
+speed fast
+repeat 5
+begin
+	open finger 2
+	open finger 3
+	open finger 4
+	open finger 5
+	open finger 1
+	close hand
+end
+
