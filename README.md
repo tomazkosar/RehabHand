@@ -20,7 +20,7 @@ More about [DSLs](https://scholar.google.com/citations?user=i8yLU8MAAAAJ&hl=en).
 - Communication layer
 - Hardware layer
 
-![RehabHand architecture](./arhitecture_git.png?raw=true "RehabHand architecture")
+![RehabHand architecture](./architecture_git.png?raw=true "RehabHand architecture")
 
 ## Detailed information 
 
