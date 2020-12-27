@@ -1,0 +1,40 @@
+grammar feri.bsc.rm.MyRobotMovement with org.eclipse.xtext.common.Terminals
+
+generate myRobotMovement "http://www.bsc.feri/rm/MyRobotMovement"
+
+Model:
+	bt+=Define cal=Calibration? rep=Repetition?;
+
+Define:
+	'hand' RobotType;
+
+RobotType:
+	rt=('bionic' | 'arduino' | 'cyton');
+
+Calibration:
+	stmts+=(InitStmt)+;
+
+InitStmt:
+	{InitializationStat}
+	(ss=SpeedStmt | sps=GenStmt);
+
+SpeedStmt:
+	'speed' SpeedOption;
+
+SpeedOption:
+	so=('slow' | 'medium' | 'fast');
+
+GenStmt:
+	{GenericStmt} (oo=OpenObj | co=CloseObj);
+
+OpenObj:
+	'open' MoveObj;
+
+CloseObj:
+	'close' MoveObj;
+
+MoveObj:
+	{MoveObject} (('finger' firstObj=INT ('-' lastObj=INT)?) | 'hand');
+
+Repetition:
+	'repeat' (times=INT | wt=INT ('.' dt=INT)? 's')? 'begin' ss+=(GenStmt /*| SpecStmt */)+ 'end';
